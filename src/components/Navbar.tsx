@@ -14,12 +14,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 glass border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-18 py-3">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full nature-gradient flex items-center justify-center transition-transform group-hover:scale-105">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 rounded-xl nature-gradient flex items-center justify-center transition-all group-hover:scale-105 group-hover:shadow-lg">
               <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-serif text-lg font-bold text-foreground hidden sm:block">
@@ -28,22 +28,19 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors relative py-2",
+                  "px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300",
                   location.pathname === link.path
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 )}
               >
                 {link.label}
-                {location.pathname === link.path && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                )}
               </Link>
             ))}
           </div>
@@ -51,7 +48,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="md:hidden p-2.5 rounded-xl hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -60,16 +57,16 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "block py-3 px-4 rounded-lg text-sm font-medium transition-colors",
+                  "block py-3 px-4 rounded-xl text-sm font-medium transition-all mb-1",
                   location.pathname === link.path
-                    ? "bg-primary/10 text-primary"
+                    ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
               >

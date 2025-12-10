@@ -1,6 +1,6 @@
 import { Topic } from "@/data/topics";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 interface TopicCardProps {
   topic: Topic;
@@ -9,34 +9,34 @@ interface TopicCardProps {
 
 const TopicCard = ({ topic, onReadMore }: TopicCardProps) => {
   return (
-    <Card className="overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in">
-      <CardHeader className="p-0">
-        <div className="aspect-[4/3] overflow-hidden">
-          <img
-            src={topic.image}
-            alt={topic.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-      </CardHeader>
-      <CardContent className="p-5">
-        <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+    <div className="card-enhanced group animate-fade-in">
+      {/* Image */}
+      <div className="aspect-[4/3] overflow-hidden">
+        <img
+          src={topic.image}
+          alt={topic.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
           {topic.title}
         </h3>
-        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+        <p className="mt-3 text-sm text-muted-foreground line-clamp-2 leading-relaxed">
           {topic.essay.substring(0, 120)}...
         </p>
-      </CardContent>
-      <CardFooter className="p-5 pt-0">
+
         <Button
           onClick={() => onReadMore(topic)}
-          variant="default"
-          className="w-full"
+          className="w-full mt-5 gap-2 rounded-xl transition-all group-hover:shadow-lg"
         >
-          Read More
+          Read Full Essay
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Button>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
-import { ExternalLink, Instagram, Phone, Globe } from "lucide-react";
+import { ExternalLink, Instagram, Phone, Globe, Users, Award } from "lucide-react";
 import ambaLogo from "@/assets/amba-school-logo.svg";
 import studentsImage from "@/assets/students-project.jpg";
+import patternBg from "@/assets/nature-bg-pattern.jpg";
 
 const About = () => {
   const projectDescription = `Managing Waste Responsibly
@@ -23,29 +24,45 @@ This journey taught us that informed citizens can create real change. We are pro
   return (
     <Layout>
       {/* Header Section */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground animate-fade-in">
-            About This Project
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        {/* Pattern Background */}
+        <div className="absolute inset-0 opacity-40">
+          <img src={patternBg} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+
+        {/* Decorative Blobs */}
+        <div className="absolute top-10 left-20 w-64 h-64 decorative-blob opacity-20" />
+        <div className="absolute bottom-10 right-10 w-48 h-48 decorative-blob opacity-20" />
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="section-badge mb-6 animate-fade-in">
+            <Users className="w-4 h-4" />
+            <span>Our Story</span>
+          </div>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in">
+            About This <span className="gradient-text">Project</span>
           </h1>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
             A collaborative initiative by Amba School for Excellence students.
           </p>
         </div>
       </section>
 
       {/* School Info Section */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="bg-card rounded-2xl shadow-card p-6 md:p-10 max-w-4xl mx-auto animate-fade-in">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="card-enhanced p-8 md:p-12 max-w-4xl mx-auto animate-fade-in">
+            <div className="flex flex-col md:flex-row items-center gap-10">
               {/* Logo */}
               <div className="flex-shrink-0">
-                <img
-                  src={ambaLogo}
-                  alt="Amba School for Excellence Logo"
-                  className="w-32 h-32 md:w-40 md:h-40 object-contain"
-                />
+                <div className="w-36 h-36 md:w-44 md:h-44 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center p-4 glow">
+                  <img
+                    src={ambaLogo}
+                    alt="Amba School for Excellence Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
 
               {/* School Details */}
@@ -53,18 +70,18 @@ This journey taught us that informed citizens can create real change. We are pro
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
                   Amba School for Excellence
                 </h2>
-                <p className="mt-2 text-muted-foreground">
+                <p className="mt-3 text-muted-foreground leading-relaxed">
                   A new age school grounded in values and tradition, dedicated to nurturing 
-                  well-rounded individuals.
+                  well-rounded individuals who make a difference in the world.
                 </p>
 
                 {/* Contact Links */}
-                <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+                <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
                   <a
                     href="https://ambaschool.org"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 rounded-lg text-primary text-sm font-medium transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-primary/10 hover:bg-primary/20 rounded-xl text-primary text-sm font-medium transition-all hover:scale-105"
                   >
                     <Globe className="w-4 h-4" />
                     ambaschool.org
@@ -75,7 +92,7 @@ This journey taught us that informed citizens can create real change. We are pro
                     href="https://instagram.com/ambaschool"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 hover:bg-accent/20 rounded-lg text-accent text-sm font-medium transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-accent/10 hover:bg-accent/20 rounded-xl text-accent text-sm font-medium transition-all hover:scale-105"
                   >
                     <Instagram className="w-4 h-4" />
                     @ambaschool
@@ -83,7 +100,7 @@ This journey taught us that informed citizens can create real change. We are pro
 
                   <a
                     href="tel:+919924345200"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-muted hover:bg-muted/80 rounded-lg text-muted-foreground text-sm font-medium transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-muted hover:bg-muted/80 rounded-xl text-muted-foreground text-sm font-medium transition-all hover:scale-105"
                   >
                     <Phone className="w-4 h-4" />
                     +91 9924345200
@@ -96,32 +113,40 @@ This journey taught us that informed citizens can create real change. We are pro
       </section>
 
       {/* Project Description Section */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 nature-gradient opacity-5" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground text-center mb-8 animate-fade-in">
-              About This Project
-            </h2>
+            <div className="text-center mb-10">
+              <div className="section-badge mb-4 animate-fade-in">
+                <Award className="w-4 h-4" />
+                <span>Project Journey</span>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground animate-fade-in">
+                About This Project
+              </h2>
+            </div>
 
-            <div className="bg-card rounded-2xl shadow-card p-6 md:p-10 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <div className="card-enhanced p-8 md:p-12 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <div className="prose prose-lg max-w-none">
                 {paragraphs.map((paragraph, index) => {
                   if (index === 0) {
                     return (
-                      <h3 key={index} className="font-serif text-xl font-bold text-primary mb-4">
+                      <h3 key={index} className="font-serif text-2xl font-bold gradient-text mb-6">
                         {paragraph}
                       </h3>
                     );
                   }
                   if (paragraph.startsWith('"') && paragraph.endsWith('"')) {
                     return (
-                      <blockquote key={index} className="border-l-4 border-primary pl-4 italic text-foreground/80 my-6">
+                      <blockquote key={index} className="border-l-4 border-primary pl-6 italic text-foreground/80 my-8 text-lg">
                         {paragraph}
                       </blockquote>
                     );
                   }
                   return (
-                    <p key={index} className="text-foreground/90 leading-relaxed mb-4">
+                    <p key={index} className="text-foreground/85 leading-relaxed mb-5 text-base">
                       {paragraph}
                     </p>
                   );
@@ -133,34 +158,41 @@ This journey taught us that informed citizens can create real change. We are pro
       </section>
 
       {/* Gallery Section */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground text-center mb-8 animate-fade-in">
-            Project Gallery
-          </h2>
+          <div className="text-center mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground animate-fade-in">
+              Project Gallery
+            </h2>
+            <p className="mt-3 text-muted-foreground">Moments from our waste management journey</p>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Student Project Image */}
-            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-card animate-fade-in">
-              <img
-                src={studentsImage}
-                alt="Students working on waste management project"
-                className="w-full h-full object-cover"
-              />
+            <div className="card-enhanced overflow-hidden animate-fade-in">
+              <div className="aspect-[4/3]">
+                <img
+                  src={studentsImage}
+                  alt="Students working on waste management project"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
             </div>
 
             {/* Placeholder Images */}
             {[2, 3, 4, 5].map((num) => (
               <div
                 key={num}
-                className="aspect-[4/3] rounded-xl overflow-hidden shadow-card bg-muted flex items-center justify-center animate-fade-in"
+                className="card-enhanced overflow-hidden animate-fade-in"
                 style={{ animationDelay: `${num * 0.1}s` }}
               >
-                <div className="text-center text-muted-foreground p-4">
-                  <div className="w-16 h-16 rounded-full bg-muted-foreground/10 flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl">📷</span>
+                <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground p-4">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <span className="text-2xl">📷</span>
+                    </div>
+                    <p className="text-sm font-medium">Project Photo {num}</p>
                   </div>
-                  <p className="text-sm">Project Photo {num}</p>
                 </div>
               </div>
             ))}
