@@ -21,7 +21,7 @@ const Index = () => {
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight animate-fade-in">
               Managing Waste{" "}
               <span className="text-primary">Responsibly</span>
@@ -33,7 +33,7 @@ const Index = () => {
               protects our environment.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <Button asChild size="lg" className="gap-2">
                 <Link to="/topics">
                   <BookOpen className="w-5 h-5" />
