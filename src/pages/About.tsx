@@ -2,12 +2,12 @@ import Layout from "@/components/Layout";
 import { ExternalLink, Instagram, Phone, Globe, Users, Award } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ambaLogo from "@/assets/amba-school-logo.svg";
-import studentsImage from "@/assets/students-project.jpg";
 import aboutBg from "@/assets/about-bg.jpg";
 import galleryPic1 from "@/assets/gallery-pic1.jpg";
 import galleryPic2 from "@/assets/gallery-pic2.jpg";
 import galleryPic4 from "@/assets/gallery-pic4.png";
 import galleryPic5 from "@/assets/gallery-pic5.png";
+import galleryPic6 from "@/assets/gallery-pic6.jpg";
 
 const About = () => {
   const schoolRef = useScrollAnimation();
@@ -19,7 +19,7 @@ const About = () => {
       {/* Fixed Background Image */}
       <div className="fixed inset-0 -z-10">
         <img src={aboutBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/85" />
+        <div className="absolute inset-0 bg-background/60" />
       </div>
 
       {/* Header Section */}
@@ -199,12 +199,12 @@ const About = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {/* Student Project Image */}
+            {/* Pledge Event Image */}
             <div className="card-enhanced overflow-hidden">
               <div className="aspect-[4/3]">
                 <img
-                  src={studentsImage}
-                  alt="Students working on waste management project"
+                  src={galleryPic6}
+                  alt="Community pledge event for waste management"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
