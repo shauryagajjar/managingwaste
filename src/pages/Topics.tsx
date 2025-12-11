@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import TopicCard from "@/components/TopicCard";
 import TopicModal from "@/components/TopicModal";
 import { topics, Topic } from "@/data/topics";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Leaf, Recycle } from "lucide-react";
 import patternBg from "@/assets/nature-bg-pattern.jpg";
 
 const Topics = () => {
@@ -23,43 +23,57 @@ const Topics = () => {
   return (
     <Layout>
       {/* Header Section */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section className="py-20 md:py-28 relative overflow-hidden">
         {/* Pattern Background */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-30">
           <img src={patternBg} alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+        <div className="absolute inset-0 mesh-gradient" />
+        <div className="absolute inset-0 hero-pattern" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
 
-        {/* Decorative Blobs */}
-        <div className="absolute top-10 right-20 w-64 h-64 decorative-blob opacity-20" />
-        <div className="absolute bottom-10 left-10 w-48 h-48 decorative-blob opacity-20" />
+        {/* Animated Decorative Elements */}
+        <div className="absolute top-10 right-10 w-72 h-72 decorative-blob opacity-25" />
+        <div className="absolute bottom-20 left-10 w-56 h-56 decorative-blob opacity-20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 decorative-blob opacity-10" />
+        
+        {/* Floating Icons */}
+        <div className="absolute top-20 left-[15%] floating opacity-20">
+          <Leaf className="w-12 h-12 text-primary" />
+        </div>
+        <div className="absolute bottom-32 right-[20%] floating opacity-20" style={{ animationDelay: '-2s' }}>
+          <Recycle className="w-10 h-10 text-accent" />
+        </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="section-badge mb-6 animate-fade-in">
+        <div className="container mx-auto px-4 text-center relative z-10 page-transition">
+          <div className="section-badge mb-6 animate-pulse-glow">
             <BookOpen className="w-4 h-4" />
             <span>Research Topics</span>
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in">
-            Waste Management <span className="gradient-text">Topics</span>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
+            Waste Management <span className="gradient-text animate-gradient">Topics</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Explore our research on different types of waste and learn how each impacts 
             our environment and health. Click on any topic to read the full essay.
           </p>
+          
+          {/* Decorative Line */}
+          <div className="mt-8 flex justify-center">
+            <div className="w-24 h-1 rounded-full nature-gradient animate-shimmer" />
+          </div>
         </div>
       </section>
 
       {/* Topics Grid */}
-      <section className="py-12 md:py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {topics.map((topic, index) => (
-              <div
-                key={topic.id}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <TopicCard topic={topic} onReadMore={handleReadMore} />
-              </div>
+      <section className="py-16 md:py-24 relative">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 hero-pattern opacity-50" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
+            {topics.map((topic) => (
+              <TopicCard key={topic.id} topic={topic} onReadMore={handleReadMore} />
             ))}
           </div>
         </div>

@@ -128,9 +128,39 @@
     50% { transform: translateY(-12px); }
   }
 
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.5); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
   .gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: var(--nature-gradient);
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.1) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 }
 
@@ -138,31 +168,93 @@
   .card-enhanced {
     @apply relative overflow-hidden rounded-2xl bg-card border border-border/50;
     box-shadow: var(--card-shadow);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-enhanced:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.02);
   }
 
   .card-enhanced::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-500;
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.08) 0%, transparent 60%);
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, transparent 60%);
   }
 
   .card-enhanced:hover::before {
     @apply opacity-100;
   }
 
+  .card-enhanced::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.15) 0%, transparent 50%);
+  }
+
+  .card-enhanced:hover::after {
+    @apply opacity-100;
+  }
+
   .section-badge {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
     @apply bg-primary/10 text-primary border border-primary/20;
+    @apply transition-all duration-300 hover:bg-primary/20 hover:scale-105;
   }
 
   .decorative-blob {
     @apply absolute rounded-full blur-3xl opacity-30;
     background: var(--nature-gradient);
+    animation: float 10s ease-in-out infinite;
+  }
+
+  .decorative-blob:nth-child(2) {
+    animation-delay: -3s;
+  }
+
+  .decorative-blob:nth-child(3) {
+    animation-delay: -6s;
+  }
+
+  .page-transition {
+    animation: fade-in 0.6s ease-out, slide-up 0.6s ease-out;
+  }
+
+  @keyframes slide-up {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .stagger-animation > * {
+    opacity: 0;
+    animation: fade-in 0.5s ease-out forwards, slide-up 0.5s ease-out forwards;
+  }
+
+  .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+  .mesh-gradient {
+    background: 
+      radial-gradient(at 40% 20%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--accent) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(152 55% 32% / 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(168 55% 35% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(142 50% 40% / 0.1) 0px, transparent 50%);
+  }
+
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.06) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23228b22' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 }
