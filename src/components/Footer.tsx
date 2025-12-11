@@ -1,17 +1,19 @@
-import { Leaf, Instagram, Phone, Globe } from "lucide-react";
+import { Instagram, Phone, Globe } from "lucide-react";
+import ambaLogo from "@/assets/amba-school-logo.svg";
 
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden border-t border-border">
       {/* Gradient Background */}
-      <div className="absolute inset-0 nature-gradient opacity-5" />
+      <div className="absolute inset-0 nature-gradient opacity-10" />
+      <div className="absolute inset-0 mesh-gradient" />
       
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="flex flex-col items-center justify-center gap-6 text-center">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl nature-gradient flex items-center justify-center glow">
-              <Leaf className="w-6 h-6 text-primary-foreground" />
+            <div className="w-14 h-14 rounded-2xl bg-white/90 flex items-center justify-center p-2 shadow-lg">
+              <img src={ambaLogo} alt="Amba School Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-serif text-xl font-bold text-foreground">
               Managing Waste Responsibly

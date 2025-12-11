@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Users, Leaf, Recycle, Heart } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Recycle, Heart, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/hero-waste-management.jpg";
 import patternBg from "@/assets/nature-bg-pattern.jpg";
+import ambaLogo from "@/assets/amba-school-logo.svg";
 
 const Index = () => {
+  const featuresRef = useScrollAnimation();
+  const ctaRef = useScrollAnimation();
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -29,7 +34,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center">
             {/* Badge */}
             <div className="section-badge mb-6 animate-fade-in">
-              <Leaf className="w-4 h-4" />
+              <img src={ambaLogo} alt="Amba School" className="w-5 h-5" />
               <span>School Project by Amba School</span>
             </div>
 
@@ -38,7 +43,7 @@ const Index = () => {
               <span className="gradient-text">Responsibly</span>
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: "0.15s" }}>
+            <p className="mt-8 text-lg md:text-xl text-foreground/80 leading-relaxed animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: "0.15s" }}>
               A school project on responsible waste management created by Amba School students. 
               Explore topics, learn real impacts, and understand how responsible waste disposal 
               protects our environment.
@@ -72,16 +77,20 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section 
+        ref={featuresRef.ref}
+        className="py-20 md:py-32 relative overflow-hidden"
+      >
         {/* Pattern Background */}
         <div className="absolute inset-0 opacity-30">
           <img src={patternBg} alt="" className="w-full h-full object-cover" />
         </div>
+        <div className="absolute inset-0 mesh-gradient" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${featuresRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="section-badge mb-4 animate-fade-in">
+            <div className="section-badge mb-4">
               <Recycle className="w-4 h-4" />
               <span>Learn & Discover</span>
             </div>
@@ -119,8 +128,8 @@ const Index = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="card-enhanced p-8 text-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className={`card-enhanced p-8 text-center transition-all duration-700 delay-${index * 150}`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mx-auto mb-6 text-primary`}>
                   {feature.icon}
@@ -138,9 +147,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section 
+        ref={ctaRef.ref}
+        className="py-20 relative overflow-hidden"
+      >
         <div className="absolute inset-0 nature-gradient opacity-10" />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="absolute inset-0 mesh-gradient" />
+        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${ctaRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="glass rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto glow">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
               Ready to Make a Difference?
