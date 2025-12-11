@@ -4,6 +4,10 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ambaLogo from "@/assets/amba-school-logo.svg";
 import studentsImage from "@/assets/students-project.jpg";
 import patternBg from "@/assets/nature-bg-pattern.jpg";
+import galleryPic1 from "@/assets/gallery-pic1.jpg";
+import galleryPic2 from "@/assets/gallery-pic2.jpg";
+import galleryPic4 from "@/assets/gallery-pic4.png";
+import galleryPic5 from "@/assets/gallery-pic5.png";
 
 const About = () => {
   const schoolRef = useScrollAnimation();
@@ -205,23 +209,49 @@ const About = () => {
               </div>
             </div>
 
-            {/* Placeholder Images */}
-            {[2, 3, 4, 5].map((num) => (
-              <div
-                key={num}
-                className="card-enhanced overflow-hidden"
-                style={{ transitionDelay: `${num * 100}ms` }}
-              >
-                <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground p-4">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                      <span className="text-2xl">📷</span>
-                    </div>
-                    <p className="text-sm font-medium">Project Photo {num}</p>
-                  </div>
-                </div>
+            {/* Gallery Photo 1 - Group Discussion */}
+            <div className="card-enhanced overflow-hidden" style={{ transitionDelay: "100ms" }}>
+              <div className="aspect-[4/3]">
+                <img
+                  src={galleryPic1}
+                  alt="Students in group discussion during project planning"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
-            ))}
+            </div>
+
+            {/* Gallery Photo 2 - Lab Work */}
+            <div className="card-enhanced overflow-hidden" style={{ transitionDelay: "200ms" }}>
+              <div className="aspect-[4/3]">
+                <img
+                  src={galleryPic2}
+                  alt="Students collaborating on research work"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            </div>
+
+            {/* Gallery Photo 4 - Presentation */}
+            <div className="card-enhanced overflow-hidden" style={{ transitionDelay: "300ms" }}>
+              <div className="aspect-[4/3]">
+                <img
+                  src={galleryPic4}
+                  alt="Students presenting their findings"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            </div>
+
+            {/* Gallery Photo 5 - Classroom Session */}
+            <div className="card-enhanced overflow-hidden" style={{ transitionDelay: "400ms" }}>
+              <div className="aspect-[4/3]">
+                <img
+                  src={galleryPic5}
+                  alt="Classroom session with teacher and students"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
