@@ -1,25 +1,14 @@
 import Layout from "@/components/Layout";
 import { ExternalLink, Instagram, Phone, Globe, Users, Award } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ambaLogo from "@/assets/amba-school-logo.svg";
 import studentsImage from "@/assets/students-project.jpg";
 import patternBg from "@/assets/nature-bg-pattern.jpg";
 
 const About = () => {
-  const projectDescription = `Managing Waste Responsibly
-We, the students of Grades 7 and 8, began our inquiry with one important Driving Question:
-"How can we, as responsible citizens, design solutions to reduce and manage waste in our community?"
-This question guided our entire learning journey and helped us understand that waste management is not just the government's responsibility—it is ours too.
-We started by observing powerful images of overflowing landfills and using a See–Think–Wonder chart to record what we noticed, what we thought, and what we wondered. From this, we developed three guiding questions that shaped our inquiry:
-What types of waste are generated in our community, and how do they impact human health and the environment?
-What are the waste management problems in our community?
-What solutions and awareness strategies can make waste management more effective and sustainable?
-To answer our first guiding question, we researched different kinds of waste and visited the Gandhinagar Municipal Corporation to see how waste is collected and processed. We also met experts and studied agricultural waste, biomedical waste, e-waste, plastic waste, and paper waste in small groups. Presenting our findings helped us understand why proper waste management is essential.
-For our second guiding question, we explored the waste management challenges in our community. We created flowcharts to show what we thought happened to waste after it was thrown away. Then, we met the local maintenance team to learn about real issues. As a class, we decided to conduct a survey in three buildings as a pilot project. By interacting with residents and analysing the data, we identified problems as well as opportunities for improvement.
-Our third guiding question led us to design practical and meaningful solutions. We studied how countries like Japan, Singapore, the US, Ukraine, and South Korea manage waste and shared their innovative practices. Using our survey data, we created building profiles and prepared a proposal with realistic solutions, which we presented to the maintenance department. We then conducted awareness and training sessions for the residents of the surveyed buildings.
-The results were encouraging—residents have now begun segregating wet and dry waste regularly. What started as a school project has now become a collaborative effort between Amba School and the Sector 4 maintenance team.
-This journey taught us that informed citizens can create real change. We are proud of the impact we have made, and we hope our learning inspires others to take action too.`;
-
-  const paragraphs = projectDescription.split("\n").filter(p => p.trim());
+  const schoolRef = useScrollAnimation();
+  const projectRef = useScrollAnimation();
+  const galleryRef = useScrollAnimation();
 
   return (
     <Layout>
@@ -29,6 +18,7 @@ This journey taught us that informed citizens can create real change. We are pro
         <div className="absolute inset-0 opacity-40">
           <img src={patternBg} alt="" className="w-full h-full object-cover" />
         </div>
+        <div className="absolute inset-0 mesh-gradient" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
 
         {/* Decorative Blobs */}
@@ -50,9 +40,13 @@ This journey taught us that informed citizens can create real change. We are pro
       </section>
 
       {/* School Info Section */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="card-enhanced p-8 md:p-12 max-w-4xl mx-auto animate-fade-in">
+      <section 
+        ref={schoolRef.ref}
+        className="py-12 md:py-20 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 mesh-gradient opacity-50" />
+        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${schoolRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="card-enhanced p-8 md:p-12 max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-10">
               {/* Logo */}
               <div className="flex-shrink-0">
@@ -113,44 +107,72 @@ This journey taught us that informed citizens can create real change. We are pro
       </section>
 
       {/* Project Description Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden">
+      <section 
+        ref={projectRef.ref}
+        className="py-12 md:py-20 relative overflow-hidden"
+      >
         <div className="absolute inset-0 nature-gradient opacity-5" />
+        <div className="absolute inset-0 hero-pattern opacity-30" />
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${projectRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
-              <div className="section-badge mb-4 animate-fade-in">
+              <div className="section-badge mb-4">
                 <Award className="w-4 h-4" />
                 <span>Project Journey</span>
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground animate-fade-in">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
                 About This Project
               </h2>
             </div>
 
-            <div className="card-enhanced p-8 md:p-12 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <div className="card-enhanced p-8 md:p-12">
               <div className="prose prose-lg max-w-none">
-                {paragraphs.map((paragraph, index) => {
-                  if (index === 0) {
-                    return (
-                      <h3 key={index} className="font-serif text-2xl font-bold gradient-text mb-6">
-                        {paragraph}
-                      </h3>
-                    );
-                  }
-                  if (paragraph.startsWith('"') && paragraph.endsWith('"')) {
-                    return (
-                      <blockquote key={index} className="border-l-4 border-primary pl-6 italic text-foreground/80 my-8 text-lg">
-                        {paragraph}
-                      </blockquote>
-                    );
-                  }
-                  return (
-                    <p key={index} className="text-foreground/85 leading-relaxed mb-5 text-base">
-                      {paragraph}
-                    </p>
-                  );
-                })}
+                <h3 className="font-serif text-2xl font-bold gradient-text mb-6">
+                  Managing Waste Responsibly
+                </h3>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  We, the students of Grades 7 and 8, began our inquiry with one important Driving Question:
+                </p>
+                
+                <blockquote className="border-l-4 border-primary pl-6 italic text-foreground/80 my-8 text-lg">
+                  "How can we, as responsible citizens, design solutions to reduce and manage waste in our community?"
+                </blockquote>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  This question guided our entire learning journey and helped us understand that waste management is not just the government's responsibility—it is ours too.
+                </p>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  We started by observing powerful images of overflowing landfills and using a See–Think–Wonder chart to record what we noticed, what we thought, and what we wondered. From this, we developed three guiding questions that shaped our inquiry:
+                </p>
+                
+                <ol className="list-decimal list-inside text-foreground/85 leading-relaxed mb-5 text-base space-y-2 pl-4">
+                  <li>What types of waste are generated in our community, and how do they impact human health and the environment?</li>
+                  <li>What are the waste management problems in our community?</li>
+                  <li>What solutions and awareness strategies can make waste management more effective and sustainable?</li>
+                </ol>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  To answer our first guiding question, we researched different kinds of waste and visited the Gandhinagar Municipal Corporation to see how waste is collected and processed. We also met experts and studied agricultural waste, biomedical waste, e-waste, plastic waste, and paper waste in small groups. Presenting our findings helped us understand why proper waste management is essential.
+                </p>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  For our second guiding question, we explored the waste management challenges in our community. We created flowcharts to show what we thought happened to waste after it was thrown away. Then, we met the local maintenance team to learn about real issues. As a class, we decided to conduct a survey in three buildings as a pilot project. By interacting with residents and analysing the data, we identified problems as well as opportunities for improvement.
+                </p>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  Our third guiding question led us to design practical and meaningful solutions. We studied how countries like Japan, Singapore, the US, Ukraine, and South Korea manage waste and shared their innovative practices. Using our survey data, we created building profiles and prepared a proposal with realistic solutions, which we presented to the maintenance department. We then conducted awareness and training sessions for the residents of the surveyed buildings.
+                </p>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  The results were encouraging—residents have now begun segregating wet and dry waste regularly. What started as a school project has now become a collaborative effort between Amba School and the Sector 4 maintenance team.
+                </p>
+                
+                <p className="text-foreground/85 leading-relaxed mb-5 text-base">
+                  This journey taught us that informed citizens can create real change. We are proud of the impact we have made, and we hope our learning inspires others to take action too.
+                </p>
               </div>
             </div>
           </div>
@@ -158,10 +180,14 @@ This journey taught us that informed citizens can create real change. We are pro
       </section>
 
       {/* Gallery Section */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
+      <section 
+        ref={galleryRef.ref}
+        className="py-12 md:py-20 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 mesh-gradient opacity-30" />
+        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${galleryRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground animate-fade-in">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
               Project Gallery
             </h2>
             <p className="mt-3 text-muted-foreground">Moments from our waste management journey</p>
@@ -169,7 +195,7 @@ This journey taught us that informed citizens can create real change. We are pro
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Student Project Image */}
-            <div className="card-enhanced overflow-hidden animate-fade-in">
+            <div className="card-enhanced overflow-hidden">
               <div className="aspect-[4/3]">
                 <img
                   src={studentsImage}
@@ -183,8 +209,8 @@ This journey taught us that informed citizens can create real change. We are pro
             {[2, 3, 4, 5].map((num) => (
               <div
                 key={num}
-                className="card-enhanced overflow-hidden animate-fade-in"
-                style={{ animationDelay: `${num * 0.1}s` }}
+                className="card-enhanced overflow-hidden"
+                style={{ transitionDelay: `${num * 100}ms` }}
               >
                 <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
                   <div className="text-center text-muted-foreground p-4">

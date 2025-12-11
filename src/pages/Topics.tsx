@@ -4,11 +4,13 @@ import TopicCard from "@/components/TopicCard";
 import TopicModal from "@/components/TopicModal";
 import { topics, Topic } from "@/data/topics";
 import { BookOpen, Leaf, Recycle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import patternBg from "@/assets/nature-bg-pattern.jpg";
 
 const Topics = () => {
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const gridRef = useScrollAnimation();
 
   const handleReadMore = (topic: Topic) => {
     setSelectedTopic(topic);
@@ -66,14 +68,24 @@ const Topics = () => {
       </section>
 
       {/* Topics Grid */}
-      <section className="py-16 md:py-24 relative">
+      <section 
+        ref={gridRef.ref}
+        className="py-16 md:py-24 relative"
+      >
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 hero-pattern opacity-50" />
+        <div className="absolute inset-0 mesh-gradient opacity-30" />
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
-            {topics.map((topic) => (
-              <TopicCard key={topic.id} topic={topic} onReadMore={handleReadMore} />
+        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${gridRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {topics.map((topic, index) => (
+              <div 
+                key={topic.id}
+                className="transition-all duration-700"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <TopicCard topic={topic} onReadMore={handleReadMore} />
+              </div>
             ))}
           </div>
         </div>
