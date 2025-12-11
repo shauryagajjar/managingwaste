@@ -1,16 +1,17 @@
 import Layout from "@/components/Layout";
-import { ExternalLink, Instagram, Phone, Globe, Users, Award } from "lucide-react";
+import { Users, Award } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import ambaLogo from "@/assets/amba-school-logo.svg";
 import aboutBg from "@/assets/about-bg.jpg";
 import galleryPic1 from "@/assets/gallery-pic1.jpg";
 import galleryPic2 from "@/assets/gallery-pic2.jpg";
 import galleryPic4 from "@/assets/gallery-pic4.png";
 import galleryPic5 from "@/assets/gallery-pic5.png";
 import galleryPic6 from "@/assets/gallery-pic6.jpg";
+import essayPic1 from "@/assets/essay-pic1.jpg";
+import essayPic2 from "@/assets/essay-pic2.jpg";
+import essayPic3 from "@/assets/essay-pic3.png";
 
 const About = () => {
-  const schoolRef = useScrollAnimation();
   const projectRef = useScrollAnimation();
   const galleryRef = useScrollAnimation();
 
@@ -41,73 +42,6 @@ const About = () => {
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
             A collaborative initiative by Amba School for Excellence students.
           </p>
-        </div>
-      </section>
-
-      {/* School Info Section */}
-      <section 
-        ref={schoolRef.ref}
-        className="py-12 md:py-20 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 mesh-gradient opacity-50" />
-        <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${schoolRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="card-enhanced p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-10">
-              {/* Logo */}
-              <div className="flex-shrink-0">
-                <div className="w-36 h-36 md:w-44 md:h-44 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center p-4 glow">
-                  <img
-                    src={ambaLogo}
-                    alt="Amba School for Excellence Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* School Details */}
-              <div className="flex-1 text-center md:text-left">
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-                  Amba School for Excellence
-                </h2>
-                <p className="mt-3 text-muted-foreground leading-relaxed">
-                  A new age school grounded in values and tradition, dedicated to nurturing 
-                  well-rounded individuals who make a difference in the world.
-                </p>
-
-                {/* Contact Links */}
-                <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
-                  <a
-                    href="https://ambaschool.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-primary/10 hover:bg-primary/20 rounded-xl text-primary text-sm font-medium transition-all hover:scale-105"
-                  >
-                    <Globe className="w-4 h-4" />
-                    ambaschool.org
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-
-                  <a
-                    href="https://instagram.com/ambaschool"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-accent/10 hover:bg-accent/20 rounded-xl text-accent text-sm font-medium transition-all hover:scale-105"
-                  >
-                    <Instagram className="w-4 h-4" />
-                    @ambaschool
-                  </a>
-
-                  <a
-                    href="tel:+919924345200"
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-muted hover:bg-muted/80 rounded-xl text-muted-foreground text-sm font-medium transition-all hover:scale-105"
-                  >
-                    <Phone className="w-4 h-4" />
-                    +91 9924345200
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -158,14 +92,41 @@ const About = () => {
                   <li>What are the waste management problems in our community?</li>
                   <li>What solutions and awareness strategies can make waste management more effective and sustainable?</li>
                 </ol>
+
+                {/* Essay Image 1 - Field Visit */}
+                <div className="my-8 rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    src={essayPic1}
+                    alt="Students visiting waste management facility"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 
                 <p className="text-foreground/85 leading-relaxed mb-5 text-base">
                   To answer our first guiding question, we researched different kinds of waste and visited the Gandhinagar Municipal Corporation to see how waste is collected and processed. We also met experts and studied agricultural waste, biomedical waste, e-waste, plastic waste, and paper waste in small groups. Presenting our findings helped us understand why proper waste management is essential.
                 </p>
+
+                {/* Essay Image 2 - Classroom Discussion */}
+                <div className="my-8 rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    src={essayPic2}
+                    alt="Students discussing project in classroom"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 
                 <p className="text-foreground/85 leading-relaxed mb-5 text-base">
                   For our second guiding question, we explored the waste management challenges in our community. We created flowcharts to show what we thought happened to waste after it was thrown away. Then, we met the local maintenance team to learn about real issues. As a class, we decided to conduct a survey in three buildings as a pilot project. By interacting with residents and analysing the data, we identified problems as well as opportunities for improvement.
                 </p>
+
+                {/* Essay Image 3 - Expert Session */}
+                <div className="my-8 rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    src={essayPic3}
+                    alt="Expert session on agricultural waste management"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 
                 <p className="text-foreground/85 leading-relaxed mb-5 text-base">
                   Our third guiding question led us to design practical and meaningful solutions. We studied how countries like Japan, Singapore, the US, Ukraine, and South Korea manage waste and shared their innovative practices. Using our survey data, we created building profiles and prepared a proposal with realistic solutions, which we presented to the maintenance department. We then conducted awareness and training sessions for the residents of the surveyed buildings.
