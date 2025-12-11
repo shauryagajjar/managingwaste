@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Users, Award } from "lucide-react";
+import { Users } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import aboutBg from "@/assets/about-bg.jpg";
 import galleryPic1 from "@/assets/gallery-pic1.jpg";
@@ -55,16 +55,6 @@ const About = () => {
         
         <div className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${projectRef.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <div className="section-badge mb-4">
-                <Award className="w-4 h-4" />
-                <span>Project Journey</span>
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                About This Project
-              </h2>
-            </div>
-
             <div className="card-enhanced p-8 md:p-12">
               <div className="prose prose-lg max-w-none">
                 <h3 className="font-serif text-2xl font-bold gradient-text mb-6">
