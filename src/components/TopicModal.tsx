@@ -19,8 +19,8 @@ const TopicModal = ({ topic, isOpen, onClose }: TopicModalProps) => {
   const paragraphs = topic.essay.split("\n\n");
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl max-h-[85vh] p-0">
+    <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
+      <DialogContent className="max-w-3xl max-h-[85vh] p-0 overflow-hidden">
         <div className="relative h-48 overflow-hidden rounded-t-lg">
           <img
             src={topic.image}
