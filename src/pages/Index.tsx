@@ -32,8 +32,8 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in">
-              Managing Waste{" "}
-              <span className="gradient-text">Responsibly</span>
+              Amba School{" "}
+              <span className="gradient-text">Project</span>
             </h1>
 
             <p className="mt-8 text-lg md:text-xl text-foreground/80 leading-relaxed animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: "0.15s" }}>
