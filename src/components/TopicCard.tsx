@@ -45,6 +45,11 @@ const TopicCard = ({ topic, onReadMore }: TopicCardProps) => {
           <span>Read Full Essay</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
+
+        {/* Authors */}
+        <p className="mt-4 text-xs text-muted-foreground text-center">
+          <span className="font-medium">Authors:</span> {topic.authors}
+        </p>
       </div>
     </div>
   );
