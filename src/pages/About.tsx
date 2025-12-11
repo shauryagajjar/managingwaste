@@ -3,7 +3,7 @@ import { ExternalLink, Instagram, Phone, Globe, Users, Award } from "lucide-reac
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ambaLogo from "@/assets/amba-school-logo.svg";
 import studentsImage from "@/assets/students-project.jpg";
-import patternBg from "@/assets/nature-bg-pattern.jpg";
+import aboutBg from "@/assets/about-bg.jpg";
 import galleryPic1 from "@/assets/gallery-pic1.jpg";
 import galleryPic2 from "@/assets/gallery-pic2.jpg";
 import galleryPic4 from "@/assets/gallery-pic4.png";
@@ -16,14 +16,15 @@ const About = () => {
 
   return (
     <Layout>
+      {/* Fixed Background Image */}
+      <div className="fixed inset-0 -z-10">
+        <img src={aboutBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/85" />
+      </div>
+
       {/* Header Section */}
       <section className="py-16 md:py-24 relative overflow-hidden">
-        {/* Pattern Background */}
-        <div className="absolute inset-0 opacity-40">
-          <img src={patternBg} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0 mesh-gradient" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+        <div className="absolute inset-0 mesh-gradient opacity-30" />
 
         {/* Decorative Blobs */}
         <div className="absolute top-10 left-20 w-64 h-64 decorative-blob opacity-20" />
