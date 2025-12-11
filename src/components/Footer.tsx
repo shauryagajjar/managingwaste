@@ -16,7 +16,7 @@ const Footer = () => {
               <img src={ambaLogo} alt="Amba School Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-serif text-xl font-bold text-foreground">
-              Managing Waste Responsibly
+              Amba School project
             </span>
           </div>
 
