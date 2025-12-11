@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { Leaf, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import ambaLogo from "@/assets/amba-school-logo.svg";
 
 const Navbar = () => {
   const location = useLocation();
@@ -19,8 +20,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-18 py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl nature-gradient flex items-center justify-center transition-all group-hover:scale-105 group-hover:shadow-lg">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
+            <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center transition-all group-hover:scale-105 group-hover:shadow-lg overflow-hidden">
+              <img src={ambaLogo} alt="Amba School" className="w-9 h-9 object-contain" />
             </div>
             <span className="font-serif text-lg font-bold text-foreground hidden sm:block">
               Waste Management
