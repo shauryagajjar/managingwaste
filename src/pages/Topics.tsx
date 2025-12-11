@@ -49,7 +49,7 @@ const Topics = () => {
             <span>Research Topics</span>
           </div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            Waste Management <span className="gradient-text animate-gradient">Topics</span>
+            Amba School Project <span className="gradient-text animate-gradient">Topics</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Explore our research on different types of waste and learn how each impacts 
