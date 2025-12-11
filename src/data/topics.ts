@@ -1,6 +1,6 @@
 import paperWasteImage from "@/assets/paper-waste.jpg";
 import plasticWasteImage from "@/assets/plastic-waste.jpg";
-import agriculturalWasteImage from "@/assets/agricultural-waste.jpg";
+import agriculturalWasteImage from "@/assets/agricultural-waste-new.jpg";
 import biomedicalWasteImage from "@/assets/biomedical-waste.jpg";
 import electronicWasteImage from "@/assets/electronic-waste.jpg";
 

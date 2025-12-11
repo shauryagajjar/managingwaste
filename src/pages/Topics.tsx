@@ -5,7 +5,6 @@ import TopicModal from "@/components/TopicModal";
 import { topics, Topic } from "@/data/topics";
 import { BookOpen, Leaf, Recycle } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import patternBg from "@/assets/nature-bg-pattern.jpg";
 
 const Topics = () => {
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
@@ -26,13 +25,10 @@ const Topics = () => {
     <Layout>
       {/* Header Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
-        {/* Pattern Background */}
-        <div className="absolute inset-0 opacity-30">
-          <img src={patternBg} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0 mesh-gradient" />
-        <div className="absolute inset-0 hero-pattern" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10" />
+        <div className="absolute inset-0 mesh-gradient opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
 
         {/* Animated Decorative Elements */}
         <div className="absolute top-10 right-10 w-72 h-72 decorative-blob opacity-25" />

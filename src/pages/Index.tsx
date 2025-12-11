@@ -5,7 +5,6 @@ import Layout from "@/components/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/hero-waste-management.jpg";
 import patternBg from "@/assets/nature-bg-pattern.jpg";
-import ambaLogo from "@/assets/amba-school-logo.svg";
 
 const Index = () => {
   const featuresRef = useScrollAnimation();
@@ -32,12 +31,6 @@ const Index = () => {
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            {/* Badge */}
-            <div className="section-badge mb-6 animate-fade-in">
-              <img src={ambaLogo} alt="Amba School" className="w-5 h-5" />
-              <span>School Project by Amba School</span>
-            </div>
-
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in">
               Managing Waste{" "}
               <span className="gradient-text">Responsibly</span>
