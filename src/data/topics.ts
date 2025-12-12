@@ -3,6 +3,11 @@ import plasticWasteImage from "@/assets/plastic-waste.jpg";
 import agriculturalWasteImage from "@/assets/agricultural-waste-new.jpg";
 import biomedicalWasteImage from "@/assets/biomedical-waste.jpg";
 import electronicWasteImage from "@/assets/electronic-waste.jpg";
+import studentsPaper from "@/assets/students-paper.jpg";
+import studentsPlastic from "@/assets/students-plastic.jpg";
+import studentsAgricultural from "@/assets/students-agricultural.jpg";
+import studentsBiomedical from "@/assets/students-biomedical.jpg";
+import studentsElectronic from "@/assets/students-electronic.jpg";
 
 export interface Topic {
   id: string;
@@ -10,6 +15,7 @@ export interface Topic {
   image: string;
   essay: string;
   authors: string;
+  studentsImage: string;
 }
 
 export const topics: Topic[] = [
@@ -18,6 +24,7 @@ export const topics: Topic[] = [
     title: "Paper Waste",
     image: paperWasteImage,
     authors: "Parthavi, Jenny, Sanvi, Pari, Shashvini",
+    studentsImage: studentsPaper,
     essay: `Did you know that a simple scrap of paper can turn into a massive global waste? Paper waste is a type of waste that can be reduced, reused, and recycled easily. But the downside is that not many are giving it importance. In this essay, not only will I discuss how paper waste is a serious problem because it affects the environment and harms humans, but also provide solutions to manage paper waste.
 
 One major effect of paper waste is on the environment. Paper waste has increased greatly, making it difficult for the environment to handle. First of all, paper comes from wood, so deforestation in order to produce more paper. This reduces habitats, leading to loss of biodiversity. Secondly, paper manufacturing can make water unsafe for drinking and bathing, killing aquatic plants and animals. It also disturbs the natural balance of ecosystems. Finally, paper factories contribute to overall environmental degradation and increase dirty surroundings, which attracts pests and insects. This shows that paper waste is harmful to the environment.
@@ -31,6 +38,7 @@ There are many solutions that can help reduce paper waste. To begin with, we can
     title: "Plastic Waste",
     image: plasticWasteImage,
     authors: "Jaini, Krisha, Chelcy, Kavya, Shreya",
+    studentsImage: studentsPlastic,
     essay: `Do you know that the plastic which you throw remains in the environment for about soo years? Plastic waste includes all the plastic material that is discovered, such as bags, bottles, and household items. Most of this waste is single-use plastic, which is discarded. In this essay, not only will I discuss how plastic waste is a serious problem because it affects the environment and harms humans, but I will also explain the possible solutions to manage plastic waste.
 
 One major effect of plastic is on the environment. Firstly, plastic takes hundreds of years to decompose. When plastic bags get mixed with soil, they block the movement of nutrients and water, which obstructs plant growth. In addition, marine animals swallow plastic pieces, which can injure or even kill them. Lastly, burning plastic releases toxic gases that pollute the air and cause air pollution and health problems, such as breathing issues. It also leads to climate change, resulting in global warming. This shows that plastic waste is harmful to the environment.
@@ -46,6 +54,7 @@ In summary, plastic can have a serious impact on humans and the environment; the
     title: "Agricultural Waste",
     image: agriculturalWasteImage,
     authors: "Vedant, Gaurang, Hansveer, Shivam",
+    studentsImage: studentsAgricultural,
     essay: `Did you know that the food which is produced through agriculture and is raised like a God can impact human life if the agriculture is not managed properly? Agricultural waste includes all the unwanted or leftover food produced from farming activities. In this essay, I will discuss how agricultural waste is a serious problem because it affects human life and harms the environment. I will also explain the possible solutions to manage agricultural waste.
 
 One major effect of agricultural waste is on the environment. Firstly, pesticides contain harmful chemicals that can mix with crops and soil,making them unsafe. They can take contaminated food and waste. Secondly, when farmers burn the agricultural waste. It releases smoke and poisonous gases into the air. This leads to air pollution and causes breathing problems. Moreover, untreated waste that is thrown into nearby waste affects aquatic life, contaminates it, and this shows that agricultural waste is harmful to the environment.
@@ -61,6 +70,7 @@ All in all, if you treat this waste properly, it will help in the reduction of c
     title: "Biomedical Waste",
     image: biomedicalWasteImage,
     authors: "Mahek, Diva, Aarvi, Shidhi, Anushka",
+    studentsImage: studentsBiomedical,
     essay: `Did you know that your negligence of biomedical waste can result in various human diseases and other environmental impacts? This waste is often generated from hospitals, clinics, households, and pharmacies. There are four types of biomedical waste: hazardous, infectious, general, and radioactive. In this essay, not only will I discuss how biomedical waste affects the environment and humans, but also discuss the possible solutions to manage biomedical waste.
 
 One major effect of biomedical waste is on the environment. Throwing medical waste in open landfills allows it to mix with the soil, which adversely reduces the soil's fertility. Additionally, burning medical waste in open areas releases toxic gases and furans. Lastly, rainwater washes harmful chemicals, blood, and pathogens into lakes, wells, and rivers. This shows that biomedical waste is harmful to the environment.
@@ -76,13 +86,14 @@ The generation of bio-medical waste is caused due to improper management, but ca
     title: "Electronic Waste",
     image: electronicWasteImage,
     authors: "Sally, Nerona, Nitiraj, Jinali",
+    studentsImage: studentsElectronic,
     essay: `Did you know that electronic waste is destroying the environment? Electronic waste is also known as E-waste. E-waste includes electronic items such as old computers, mobiles, batteries, chargers, and cables that are no longer useful and are thrown away. According to a report, around 7 lakh tonnes of E-waste were generated in the year 2017-18, which showed a huge rise by 2021-22 and is expected to cross over 16 million tonnes by 2030. In this essay, I will discuss how electronic waste is a serious problem by exploring not only how it affects humans and harms the environment, but also the possible solutions to manage electronic waste.
 
 One major effect of electronic waste is on the environment. To begin with, toxic metals like Lead, mercury, chromium, and lithium, and flame retardant chemicals from e-waste seep into the ground. This reduces its soil quality and fertility, which affects plant growth. Also, heavy metal contamination in water, like ponds, rivers, becomes unsafe for drinking, farming, and fish habitats. It also damages the entire ecosystem; furthermore, the food chain gets disturbed, and biodiversity decreases as habitats become unsafe. This shows that electronic waste is harmful to the environment.
 
 Another big impact of electronic waste is on humans. When E-waste breaks down or is handled improperly, toxic metals leak into the air, soil, and water. These toxic chemicals enter the body and hamrs our health. For example, if these toxins enter our body, they can cause headache, dizziness. Further, they can damage our brains and nerve cells, cause kidney and liver problems, and also increase the risk of cancer. This shows that electronic waste is dangerous to human health.
 
-There are many solutions that can help reduce electronic waste. One solution is reducing the usage of e-waste by not buying new gadgets unnecessarily. We should choose durable goods, high-quality electronics that last longer. Additionally, we can reuse our old devices and donate working computers, mobiles, and appliances to someone who needs them. Moreover, supporting the government rules can help us manage e-waste. We can follow e-waste management laws that encourage recycling. If people follow these steps, then access waste of e-waste can be avoided.
+There are many solutions that can help reduce electronic waste. One solution is reducing the usage of e-waste by not buying new gadgets unnecessarily. We should choose durable goods, high-quality electronics that last longer. Additionally, we can reuse our old devices and donate working computers, mobiles, and appliances to someone who needs them. Moreover, supporting the government rules can help us manage e-waste. We can follow e-waste management rules that encourage recycling. If people follow these steps, then access waste of e-waste can be avoided.
 
 In the end, we should avoid purchasing electronic items. We should decrease the amount of electronic waste generated. In conclusion, this essay explains how e-waste harms the environment, hurts animals and humans, and possible solutions can be taken to reduce e-waste. We should decrease the use of electronic waste so that pollution and human health issues can decrease and our loss of valuable minerals can gradually stop.`,
   },

@@ -7,7 +7,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Users } from "lucide-react";
 
 interface TopicModalProps {
   topic: Topic | null;
@@ -44,8 +44,9 @@ const TopicModal = ({ topic, isOpen, onClose }: TopicModalProps) => {
             <DialogTitle className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-foreground drop-shadow-lg">
               {topic.title}
             </DialogTitle>
-            <DialogDescription className="text-muted-foreground mt-2">
-              Research Essay on Waste Management
+            <DialogDescription className="text-muted-foreground mt-2 flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              <span className="font-medium">By: {topic.authors}</span>
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -54,6 +55,20 @@ const TopicModal = ({ topic, isOpen, onClose }: TopicModalProps) => {
         <ScrollArea className="max-h-[50vh] px-6 pb-6">
           {/* Decorative Line */}
           <div className="w-16 h-1 rounded-full nature-gradient mb-6" />
+
+          {/* Students Image */}
+          <div className="mb-6 rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={topic.studentsImage}
+              alt={`Students who wrote the ${topic.title} essay`}
+              className="w-full h-auto object-cover"
+            />
+            <div className="bg-muted/50 p-3 text-center">
+              <p className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">Essay Authors:</span> {topic.authors}
+              </p>
+            </div>
+          </div>
           
           <div className="prose prose-sm max-w-none">
             {paragraphs.map((paragraph, index) => (

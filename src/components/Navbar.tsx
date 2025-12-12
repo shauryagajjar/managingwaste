@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/topics", label: "Topics" },
-    { path: "/about", label: "About" },
+    { path: "/about", label: "About Us" },
   ];
 
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
               <img src={ambaLogo} alt="Amba School" className="w-9 h-9 object-contain" />
             </div>
             <span className="font-serif text-lg font-bold text-foreground hidden sm:block">
-              Waste Management
+              Amba School Project
             </span>
           </Link>
 

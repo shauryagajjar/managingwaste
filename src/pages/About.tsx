@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Users, Sparkles } from "lucide-react";
+import { Users, Sparkles, ImageIcon } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import aboutHeroBg from "@/assets/about-hero-bg.jpg";
 import galleryPic1 from "@/assets/gallery-pic1.jpg";
@@ -7,6 +7,7 @@ import galleryPic2 from "@/assets/gallery-pic2.jpg";
 import galleryPic4 from "@/assets/gallery-pic4.png";
 import galleryPic5 from "@/assets/gallery-pic5.png";
 import galleryPic6 from "@/assets/gallery-pic6.jpg";
+import groupPhoto from "@/assets/group-photo.png";
 import essayPic1 from "@/assets/essay-pic1.jpg";
 import essayPic2 from "@/assets/essay-pic2.jpg";
 import essayPic3 from "@/assets/essay-pic3.png";
@@ -22,7 +23,7 @@ const About = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src={aboutHeroBg} 
+            src={groupPhoto} 
             alt="" 
             className="w-full h-full object-cover"
           />
@@ -39,7 +40,7 @@ const About = () => {
             <span className="text-sm font-medium text-primary">Our Story</span>
           </div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            About This <span className="gradient-text animate-gradient">Project</span>
+            About <span className="gradient-text animate-gradient">Us</span>
           </h1>
           <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
             A collaborative initiative by Amba School for Excellence students.
@@ -167,6 +168,7 @@ const About = () => {
               { src: galleryPic2, alt: "Students collaborating on research work" },
               { src: galleryPic4, alt: "Students presenting their findings" },
               { src: galleryPic5, alt: "Classroom session with teacher and students" },
+              { src: null, alt: "Photo placeholder" },
             ].map((img, index) => (
               <div 
                 key={index}
@@ -178,11 +180,18 @@ const About = () => {
                 }}
               >
                 <div className="aspect-[4/3] relative">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                  />
+                  {img.src ? (
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-muted/50 flex flex-col items-center justify-center gap-3">
+                      <ImageIcon className="w-12 h-12 text-muted-foreground/50" />
+                      <span className="text-sm text-muted-foreground">Photo Coming Soon</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
