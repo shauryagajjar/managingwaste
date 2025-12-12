@@ -22,7 +22,7 @@ const Footer = () => {
 
           {/* Description */}
           <p className="text-sm text-muted-foreground">A school project by Amba School For Excellence Grades 7 and 8 students.</p>
-           <p>"font-serif text-xl font-bold text-foreground"Built By Shaurya Gajjar</p>
+           <p>Built By Shaurya Gajjar</p>
 
           {/* Contact Links */}
           <div className="flex flex-wrap justify-center gap-4 mt-2">
