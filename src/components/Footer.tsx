@@ -1,5 +1,5 @@
 import { Instagram, Phone, Globe } from "lucide-react";
-import ambaLogo from "@/assets/amba-school-logo.svg";
+import ambaLogo from "@/assets/amba-school-logo.jfif";
 
 const Footer = () => {
   return (
@@ -21,9 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground max-w-md">
-            A school project by Amba School For Excellence Grades 7 and 8 students
-          </p>
+          <p className="text-sm text-muted-foreground">A school project by Amba School For Excellence Grades 7 and 8 students</p>
 
           {/* Contact Links */}
           <div className="flex flex-wrap justify-center gap-4 mt-2">
