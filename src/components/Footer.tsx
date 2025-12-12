@@ -21,9 +21,8 @@ const Footer = () => {
           </div>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground">A school project by Amba School For Excellence Grades 7 and 8 students
-          
-          Built By Shaurya Gajjar</p>
+          <p className="text-sm text-muted-foreground">A school project by Amba School For Excellence Grades 7 and 8 students.</p>
+           <p>Built By Shaurya Gajjar</p>
 
           {/* Contact Links */}
           <div className="flex flex-wrap justify-center gap-4 mt-2">
