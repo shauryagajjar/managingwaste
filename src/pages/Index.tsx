@@ -54,7 +54,7 @@ const Index = () => {
               <Button asChild variant="outline" size="lg" className="gap-2 text-base px-8 py-6 rounded-xl glass">
                 <Link to="/about">
                   <Users className="w-5 h-5" />
-                  About the Project
+                  About Us
                 </Link>
               </Button>
             </div>

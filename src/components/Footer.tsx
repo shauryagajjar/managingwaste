@@ -22,7 +22,7 @@ const Footer = () => {
 
           {/* Description */}
           <p className="text-sm text-muted-foreground max-w-md">
-            A school project by Amba School for Excellence students on responsible waste management.
+            A school project by Amba School For Excellence Grades 7 and 8 students
           </p>
 
           {/* Contact Links */}
@@ -58,7 +58,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-xs text-muted-foreground/70 mt-4">
-            © 2024 Amba School for Excellence. All rights reserved.
+            © 2025 Amba School for Excellence. All rights reserved.
           </p>
         </div>
       </div>

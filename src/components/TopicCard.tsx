@@ -99,7 +99,7 @@ const TopicCard = ({ topic, onReadMore }: TopicCardProps) => {
             <div className="w-full h-full bg-gradient-to-r from-transparent via-primary to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
           </div>
           
-          <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 transform group-hover:translate-x-1">
+          <h3 className="font-serif text-xl font-bold text-foreground transition-all duration-300 transform group-hover:translate-x-1">
             {topic.title}
           </h3>
           <p className="mt-3 text-sm text-muted-foreground line-clamp-2 leading-relaxed transition-all duration-300 group-hover:text-foreground/70">

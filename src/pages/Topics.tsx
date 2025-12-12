@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import TopicCard from "@/components/TopicCard";
 import TopicModal from "@/components/TopicModal";
 import { topics, Topic } from "@/data/topics";
-import { BookOpen, Leaf, Recycle, Sparkles } from "lucide-react";
+import { Leaf, Recycle, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import topicsHeroBg from "@/assets/topics-hero-bg.jpg";
 
@@ -59,7 +59,7 @@ const Topics = () => {
             <span className="text-sm font-medium text-primary">Research Topics</span>
           </div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Amba School Project <span className="gradient-text animate-gradient">Topics</span>
+            <span className="gradient-text animate-gradient">Topics</span>
           </h1>
           <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Explore our research on different types of waste and learn how each impacts 
