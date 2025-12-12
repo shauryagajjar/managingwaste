@@ -21,7 +21,9 @@ const Footer = () => {
           </div>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground">A school project by Amba School For Excellence Grades 7 and 8 students</p>
+          <p className="text-sm text-muted-foreground">A school project by Amba School For Excellence Grades 7 and 8 students
+          
+          Built By Shaurya Gajjar</p>
 
           {/* Contact Links */}
           <div className="flex flex-wrap justify-center gap-4 mt-2">
@@ -57,7 +59,7 @@ const Footer = () => {
           {/* Copyright */}
           <p className="text-xs text-muted-foreground/70 mt-4">
             © 2025 Amba School for Excellence. All rights reserved.
-                         Built By Shaurya Gajjar
+                         
           </p>
         </div>
       </div>
