@@ -6,7 +6,7 @@ import galleryPic1 from "@/assets/gallery-pic1.jpg";
 import galleryPic2 from "@/assets/gallery-pic2.jpg";
 import galleryPic4 from "@/assets/gallery-pic4.png";
 import galleryPic5 from "@/assets/gallery-pic5.png";
-import galleryPic6 from "@/assets/gallery-pic6.jpg";
+import galleryPic6 from "@/assets/gallery-pic6.png";
 import groupPhoto from "@/assets/group-photo.png";
 import essayPic1 from "@/assets/essay-pic1.jpg";
 import essayPic2 from "@/assets/essay-pic2.jpg";
@@ -19,15 +19,15 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section with New Background */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-start justify-center overflow-hidden pt-32">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src={groupPhoto} 
             alt="" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/60 to-background" />
         </div>
 
         {/* Animated Decorative Elements */}
@@ -168,7 +168,7 @@ const About = () => {
               { src: galleryPic2, alt: "Students collaborating on research work" },
               { src: galleryPic4, alt: "Students presenting their findings" },
               { src: galleryPic5, alt: "Classroom session with teacher and students" },
-              { src: null, alt: "Photo placeholder" },
+              { src: galleryPic6, alt: "Students in meeting discussion" },
             ].map((img, index) => (
               <div 
                 key={index}

@@ -23,7 +23,7 @@ export const topics: Topic[] = [
     id: "paper-waste",
     title: "Paper Waste",
     image: paperWasteImage,
-    authors: "Parthavi, Jenny, Sanvi, Pari, Shashvini",
+    authors: "Parthavi, Jenny, Sanvi, Pari",
     studentsImage: studentsPaper,
     essay: `Did you know that a simple scrap of paper can turn into a massive global waste? Paper waste is a type of waste that can be reduced, reused, and recycled easily. But the downside is that not many are giving it importance. In this essay, not only will I discuss how paper waste is a serious problem because it affects the environment and harms humans, but also provide solutions to manage paper waste.
 
