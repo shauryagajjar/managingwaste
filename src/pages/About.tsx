@@ -7,7 +7,7 @@ import galleryPic2 from "@/assets/gallery-pic2.jpg";
 import galleryPic4 from "@/assets/gallery-pic4.png";
 import galleryPic5 from "@/assets/gallery-pic5.png";
 import galleryPic6 from "@/assets/gallery-pic6.png";
-import groupPhoto from "@/assets/group-photo.png";
+import aboutTopImage from "@/assets/about-top-image.jpg";
 import essayPic1 from "@/assets/essay-pic1.jpg";
 import essayPic2 from "@/assets/essay-pic2.jpg";
 import essayPic3 from "@/assets/essay-pic3.png";
@@ -18,23 +18,13 @@ const About = () => {
 
   return (
     <Layout>
-      {/* Hero Section with New Background */}
-      <section className="relative min-h-[60vh] flex items-start justify-center overflow-hidden pt-32">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={groupPhoto} 
-            alt="" 
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/60 to-background" />
-        </div>
-
+      {/* Hero Section */}
+      <section className="relative min-h-[40vh] flex items-start justify-center overflow-hidden pt-24 bg-muted/30">
         {/* Animated Decorative Elements */}
         <div className="absolute top-20 left-[10%] w-32 h-32 rounded-full bg-primary/20 blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-[15%] w-40 h-40 rounded-full bg-accent/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-        <div className="container mx-auto px-4 text-center relative z-10 py-20">
+        <div className="container mx-auto px-4 text-center relative z-10 py-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Our Story</span>
@@ -66,7 +56,16 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <div className="card-enhanced p-8 md:p-12 backdrop-blur-sm bg-card/95 shadow-2xl">
               <div className="prose prose-lg max-w-none">
-                <h3 className="font-serif text-2xl md:text-3xl font-bold gradient-text mb-6">
+              {/* Top Image */}
+              <div className="mb-8 rounded-2xl overflow-hidden shadow-xl transition-transform duration-500 hover:scale-[1.02]">
+                <img
+                  src={aboutTopImage}
+                  alt="Students at Gandhinagar Municipal Corporation Vermi Compost Plant"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
+              <h3 className="font-serif text-2xl md:text-3xl font-bold gradient-text mb-6">
                   Managing Waste Responsibly
                 </h3>
                 

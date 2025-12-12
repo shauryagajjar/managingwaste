@@ -38,6 +38,7 @@ const TopicCard = ({ topic, onReadMore }: TopicCardProps) => {
     <div
       ref={cardRef}
       className="relative group cursor-pointer"
+      onClick={() => onReadMore(topic)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -101,9 +102,11 @@ const TopicCard = ({ topic, onReadMore }: TopicCardProps) => {
           </p>
 
           <Button
-            onClick={() => onReadMore(topic)}
-            variant="secondary"
-            className="w-full mt-5 gap-2 rounded-xl transition-all duration-300 group-hover:shadow-xl hover:scale-[1.03] active:scale-[0.97] overflow-hidden relative"
+            onClick={(e) => {
+              e.stopPropagation();
+              onReadMore(topic);
+            }}
+            className="w-full mt-5 gap-2 rounded-xl transition-all duration-300 group-hover:shadow-xl hover:scale-[1.03] active:scale-[0.97] overflow-hidden relative bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             <span className="relative z-10">Read Full Essay</span>
             <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-2" />
