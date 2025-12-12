@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
-import { Users, Sparkles, ImageIcon } from "lucide-react";
+import { Sparkles, ImageIcon } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import aboutHeroBg from "@/assets/about-hero-bg.jpg";
-import galleryPic1 from "@/assets/gallery-pic1.jpg";
-import galleryPic2 from "@/assets/gallery-pic2.jpg";
+import galleryPic1 from "@/assets/gallery-pic1.png";
+import galleryPic2 from "@/assets/gallery-pic2.png";
+import galleryPic3 from "@/assets/gallery-pic3.png";
 import galleryPic4 from "@/assets/gallery-pic4.png";
 import galleryPic5 from "@/assets/gallery-pic5.png";
 import galleryPic6 from "@/assets/gallery-pic6.png";
@@ -18,8 +18,31 @@ const About = () => {
 
   return (
     <Layout>
+      {/* Illustrative Background Pattern */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        {/* Leaf patterns */}
+        <svg className="absolute top-20 left-10 w-24 h-24 text-primary/10 animate-pulse" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 5 C30 25, 10 50, 50 95 C90 50, 70 25, 50 5 Z" />
+        </svg>
+        <svg className="absolute top-40 right-16 w-16 h-16 text-accent/15 animate-pulse" style={{ animationDelay: '0.5s' }} viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 5 C30 25, 10 50, 50 95 C90 50, 70 25, 50 5 Z" />
+        </svg>
+        <svg className="absolute bottom-40 left-20 w-20 h-20 text-primary/8 animate-pulse" style={{ animationDelay: '1s' }} viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 5 C30 25, 10 50, 50 95 C90 50, 70 25, 50 5 Z" />
+        </svg>
+        <svg className="absolute bottom-60 right-24 w-14 h-14 text-accent/12 animate-pulse" style={{ animationDelay: '1.5s' }} viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 5 C30 25, 10 50, 50 95 C90 50, 70 25, 50 5 Z" />
+        </svg>
+        {/* Recycling circles */}
+        <div className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full border-2 border-dashed border-primary/10 animate-spin" style={{ animationDuration: '20s' }} />
+        <div className="absolute bottom-1/3 right-1/4 w-24 h-24 rounded-full border-2 border-dashed border-accent/10 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+        {/* Gradient orbs */}
+        <div className="absolute top-1/4 right-1/3 w-40 h-40 rounded-full bg-gradient-to-br from-primary/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/3 w-48 h-48 rounded-full bg-gradient-to-tr from-accent/5 to-transparent blur-3xl" />
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex items-start justify-center overflow-hidden pt-24 bg-muted/30">
+      <section className="relative min-h-[40vh] flex items-start justify-center overflow-hidden pt-24 bg-transparent">
         {/* Animated Decorative Elements */}
         <div className="absolute top-20 left-[10%] w-32 h-32 rounded-full bg-primary/20 blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-[15%] w-40 h-40 rounded-full bg-accent/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -162,12 +185,12 @@ const About = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { src: galleryPic6, alt: "Community pledge event for waste management" },
-              { src: galleryPic1, alt: "Students in group discussion during project planning" },
-              { src: galleryPic2, alt: "Students collaborating on research work" },
-              { src: galleryPic4, alt: "Students presenting their findings" },
-              { src: galleryPic5, alt: "Classroom session with teacher and students" },
-              { src: galleryPic6, alt: "Students in meeting discussion" },
+              { src: galleryPic1, alt: "Students learning about agricultural waste management" },
+              { src: galleryPic2, alt: "Students visiting a farm facility" },
+              { src: galleryPic3, alt: "Expert session on agricultural waste management" },
+              { src: galleryPic4, alt: "Classroom learning session with students" },
+              { src: galleryPic5, alt: "Students collaborating on group project work" },
+              { src: galleryPic6, alt: "Students working on project materials" },
             ].map((img, index) => (
               <div 
                 key={index}
