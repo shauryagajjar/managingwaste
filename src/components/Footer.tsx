@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-xs text-muted-foreground/70 mt-4">
-            <p>Built By Shaurya </p>
+            <p>Built By Shaurya Gajjar</p>
             © 2025 Amba School for Excellence. All rights reserved.
                          
           </p>
