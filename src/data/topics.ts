@@ -71,7 +71,7 @@ All in all, if you treat this waste properly, it will help in the reduction of c
     id: "biomedical-waste",
     title: "Biomedical Waste",
     image: biomedicalWasteImage,
-    authors: "Mahek, Diva, Aarvi, Shidhi, Anushka",
+    authors: "Mahek, Diva, Aarvi, Siddhi, Anushka",
     studentsImage: studentsBiomedical,
     essay: `Did you know that your negligence of biomedical waste can result in various human diseases and other environmental impacts? This waste is often generated from hospitals, clinics, households, and pharmacies. There are four types of biomedical waste: hazardous, infectious, general, and radioactive. In this essay, not only will I discuss how biomedical waste affects the environment and humans, but also discuss the possible solutions to manage biomedical waste.
 
